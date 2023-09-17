@@ -1,0 +1,94 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Tix's Hub", "Ocean")
+local Tab = Window:NewTab("Quests")
+local QuestsSection = Tab:NewSection(" Working Old Quests")
+local Tab = Window:NewTab("AutoFarm SOON")
+local Tab = Window:NewTab("Player")
+local PlayerSection = Tab:NewSection("Player Buffs")
+PlayerSection:NewSlider("JumpPower", "Changes how fast you jump", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+PlayerSection:NewSlider("Walkspeed", "Changes how fast you walk", 100, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+PlayerSection:NewToggle("Infinite Jump", "Lets you infinitely jump", function()
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+    end)
+
+local Tab = Window:NewTab("Guis")
+local GuisSection = Tab:NewSection("Guis")
+GuisSection:NewButton("Infinite Yield", "Gives you infinite yield script", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+    GuisSection:NewButton("Anti AFK", "Can afk without getting disconnected", function()
+    wait(0.5)local ba=Instance.new("ScreenGui")
+local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
+ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti AFK"ca.TextColor3=Color3.new(0,1,1)
+ca.TextSize=22;da.Parent=ca
+da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+da.Size=UDim2.new(0,370,0,107)_b.Parent=da
+_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+_b.Size=UDim2.new(0,370,0,21)_b.Font=Enum.Font.Arial;_b.Text="Made by ???"
+_b.TextColor3=Color3.new(0,1,1)_b.TextSize=20;ab.Parent=da
+ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377,0)
+ab.Size=UDim2.new(0,370,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Active"
+ab.TextColor3=Color3.new(0,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+ab.Text="Roblox tried to kick u but i am anime villain so i kicked them instead"wait(2)ab.Text="Status : Active"end)
+    end)
+
+QuestsSection:NewButton("Fabby's Quest", "Loads in the Fabby boss.", function()
+    workspace.QuestMakerEvent:FireServer(100)
+end)
+
+QuestsSection:NewButton("Inner Cloud", "Teleports you to Inner Cloud/Easter", function()    
+    local plr = game.Players.LocalPlayer;
+local Char = game.Players.LocalPlayer.Character;
+local Teleporting = game:GetService("TeleportService");
+local CFrameEnd1 = CFrame.new(631, 26, -46);
+local Time1 = 5;
+local tween1 = game:GetService("TweenService"):Create(Char.HumanoidRootPart, TweenInfo.new(Time1), {CFrame = CFrameEnd1});
+local CFrameEnd2 = CFrame.new(484, 68, 270);
+local Time2 = 5;
+local tween2 =  game:GetService("TweenService"):Create(Char.HumanoidRootPart, TweenInfo.new(Time2), {CFrame = CFrameEnd2});
+if game.PlaceId ~= 1930863474 then
+Teleporting:Teleport(1930863474, plr)
+else
+tween1:Play()
+tween1.Completed:Wait(X)
+end
+end)
+QuestsSection:NewButton("GingerBread Fight", "Ginger Bread FINAL BOSS 🗿", function()
+    workspace.QuestMakerEvent:FireServer(99)
+end)
+
+
+QuestsSection:NewButton("Winter Place", "Not worth it only gives 50 gold", function()
+    local plr = game.Players.LocalPlayer;
+local Char = game.Players.LocalPlayer.Character;
+local Teleporting = game:GetService("TeleportService");
+local CFrameEnd1 = CFrame.new(631, 26, -46);
+local Time1 = 5;
+local tween1 = game:GetService("TweenService"):Create(Char.HumanoidRootPart, TweenInfo.new(Time1), {CFrame = CFrameEnd1});
+local CFrameEnd2 = CFrame.new(484, 68, 270);
+local Time2 = 5;
+local tween2 =  game:GetService("TweenService"):Create(Char.HumanoidRootPart, TweenInfo.new(Time2), {CFrame = CFrameEnd2});
+if game.PlaceId ~= 1930866268 then
+Teleporting:Teleport(1930866268, plr)
+else
+tween1:Play()
+tween1.Completed:Wait(X)
+end
+end)
+
+

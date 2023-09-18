@@ -25,22 +25,7 @@ local GuisSection = Tab:NewSection("Guis")
 GuisSection:NewButton("Infinite Yield", "Gives you infinite yield script", function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
     end)
-GuisSection:NewButton("AutoBuild", "Steals builds from players", function()
-        loadstring(game:HttpGet(('local old = httpget_async
-getgenv().httpget_async = function(url, ...)
-    if url == 'https://www.stenutilities.com/discord/babft' then
-        return 'https://discord.gg/HXYqGnEr2K'
-    end
-    
-    if url == 'https://raw.githubusercontent.com/StenDirt/Trash-Game/main/UI.lua' then
-        return old('https://raw.githubusercontent.com/Val1antt/scripts/main/BuildABoat/BackupLib.lua', ...)
-    end
-    
-    return old(url, ...)
-end
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/Val1antt/scripts/main/BuildABoat/BuildABoatRestored.lua"),true))()'),true))()
-    end)
     GuisSection:NewButton("Anti AFK", "Can afk without getting disconnected", function()
     wait(0.5)local ba=Instance.new("ScreenGui")
 local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
